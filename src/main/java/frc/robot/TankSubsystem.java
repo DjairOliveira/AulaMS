@@ -12,11 +12,11 @@ public class TankSubsystem extends SubsystemBase {
 
     private XboxController ControlDriver = new XboxController(0);
 
-    private SparkMax M1_Left = new SparkMax(2, MotorType.kBrushless);
-    private SparkMax M2_Left = new SparkMax(4, MotorType.kBrushless);
+    // private SparkMax M1_Left = new SparkMax(2, MotorType.kBrushless);
+    // private SparkMax M2_Left = new SparkMax(4, MotorType.kBrushless);
 
     private SparkMax M1_Right = new SparkMax(5, MotorType.kBrushless);
-    private SparkMax M2_Right = new SparkMax(3, MotorType.kBrushless);
+    // private SparkMax M2_Right = new SparkMax(3, MotorType.kBrushless);
 
     public TankSubsystem() {
 
@@ -39,16 +39,15 @@ public class TankSubsystem extends SubsystemBase {
         double conjuntoLeft = (Frente - Re) - Direcao;
         double conjuntoRight = (Frente - Re) + Direcao;
 
-        M1_Left.set(MathUtil.clamp(conjuntoLeft, -1.0, 1.0));
-        M2_Left.set(MathUtil.clamp(conjuntoLeft, -1.0, 1.0));
+        // M1_Left.set(MathUtil.clamp(conjuntoLeft, -1.0, 1.0));
+        // M2_Left.set(MathUtil.clamp(conjuntoLeft, -1.0, 1.0));
 
         M1_Right.set(MathUtil.clamp(conjuntoRight, -1.0, 1.0));
-        M2_Right.set(MathUtil.clamp(conjuntoRight, -1.0, 1.0));
+        // M2_Right.set(MathUtil.clamp(conjuntoRight, -1.0, 1.0));
 
     }
 
-
-    public double getVelocity(){
-        return M1_Left.getEncoder().getVelocity();
-    }
+    // public double getVelocity(){
+    //     return M1_Left.getEncoder().getVelocity();
+    // }
 }

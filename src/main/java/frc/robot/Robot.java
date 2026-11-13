@@ -16,7 +16,8 @@ public class Robot extends LoggedRobot {
 
   private Command m_autonomousCommand;
   private final RobotContainer m_robotContainer;
-  private TankSubsystem m_TankSubsystem = new TankSubsystem();
+  // private TankSubsystem m_TankSubsystem = new TankSubsystem();
+  // private Intake m_Intake = new Intake();
 
   public Robot() {
     m_robotContainer = new RobotContainer();
@@ -37,8 +38,10 @@ public class Robot extends LoggedRobot {
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
 
-    Logger.recordOutput("Velocidade Motor", m_TankSubsystem.getVelocity());
-    
+    // Logger.recordOutput("Velocidade Motor", m_TankSubsystem.getVelocity());
+    Logger.recordOutput("Intake/Velocity", m_robotContainer.getVelocityIntake());
+    Logger.recordOutput("Intake/Position", m_robotContainer.getPositionIntake());
+
   }
 
   @Override
